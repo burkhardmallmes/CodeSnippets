@@ -3,13 +3,11 @@ package de.burkhard.codesnippets.calendar;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
 import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeConstants;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
@@ -21,7 +19,14 @@ public class ConvertStringToXMLGregorianCalendar {
 		TimeZone timezone = null;
 		//timezone = TimeZone.getTimeZone("Europe/Berlin");
 		boolean normalize = false;
+		
+		// Test 1
 		XMLGregorianCalendar xmlgc = convertStringToXMLGregorianCalendar(dateString, dateformatStr, timezone, normalize);
+		System.out.println(xmlgc.toString());
+		
+		// Test 2
+		dateformatStr = "yyyy-MM-dd";
+		xmlgc = convertStringToXMLGregorianCalendar(dateString, dateformatStr, timezone, normalize);
 		System.out.println(xmlgc.toString());
 	}
 	
